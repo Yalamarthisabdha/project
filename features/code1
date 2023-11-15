@@ -1,0 +1,25 @@
+// Example of making API calls using axios (you'll need to install axios: npm install axios)
+import axios from 'axios';
+
+// Example API calls to retrieve data
+const API_URL = 'http://yourbackendurl.com/api'; // Replace with your backend URL
+
+// Get analytics data
+export const getAnalyticsData = () => {
+  return axios.get(`${API_URL}/analytics`);
+};
+
+// Get reports data
+export const getReportsData = () => {
+  return axios.get(`${API_URL}/reports`);
+};
+
+// Example API call to create a new report
+export const createReport = (reportData) => {
+  return axios.post(`${API_URL}/reports`, reportData);
+};
+
+// Example API call to delete a report
+export const deleteReport = (reportId) => {
+  return axios.delete(`${API_URL}/reports/${reportId}`);
+};

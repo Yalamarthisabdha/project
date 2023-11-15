@@ -1,9 +1,0 @@
-
-const mongoose = require('mongoose');
-
-const reportSchema = new mongoose.Schema({
-  // Define schema fields for reports
-  // Example: title, content, generation timestamp, etc.
-});
-
-module.exports = mongoose.model('Report', reportSchema);
