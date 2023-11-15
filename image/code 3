@@ -1,0 +1,29 @@
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+const Image = require('../models/Image'); // Assuming Image model exists
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage });
+
+router.post('/images/upload', upload.single('image'), async (req, res) => {
+  try {
+    const newImage = new Image({
+      imageUrl: `http://your-domain.com/uploads/${req.file.filename}` // Update with your domain
+    });
+    const savedImage = await newImage.save();
+    res.status(201).json(savedImage);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+module.exports = router;
