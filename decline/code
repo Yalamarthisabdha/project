@@ -1,0 +1,30 @@
+const express = require('express');
+const router = express.Router();
+
+// Import MongoDB models
+const Analytics = require('../models/analytics');
+const Reporting = require('../models/reporting');
+
+// Analytics API endpoint
+router.get('/analytics', async (req, res) => {
+  try {
+    const analyticsData = await Analytics.find();
+    res.json(analyticsData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+// Reporting API endpoint
+router.get('/reporting', async (req, res) => {
+  try {
+    const reportingData = await Reporting.find();
+    res.json(reportingData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+module.exports = router;
