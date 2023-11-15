@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const ReportingForm = () => {
+  const [reportSpecification, setReportSpecification] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Send a POST request to generate a report based on the specification
+    axios.post('/api/reports', { specification: reportSpecification })
+      .then(response => {
+        console.log('Report generated: ', response.data);
+        // Handle the generated report data
+      })
+      .catch(error => {
+        console.error('Error generating report: ', error);
+      });
+  };
+
+  return (
+    <div>
+      <h1>Generate Report</h1>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          value={reportSpecification}
+          onChange={(e) => setReportSpecification(e.target.value)}
+          placeholder="Enter report specification"
+        />
+        <button type="submit">Generate Report</button>
+      </form>
+    </div>
+  );
+};
+
+export default ReportingForm;
