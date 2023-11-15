@@ -1,0 +1,15 @@
+import React, { useEffect, useState } from 'react';
+import AnalyticsTable from './AnalyticsTable'; // Create this component for displaying analytics data
+
+const AnalyticsPage = () => {
+  // Fetch analytics data from API using useEffect and useState
+
+  return (
+    <div>
+      <h1>Analytics Page</h1>
+      <AnalyticsTable />
+    </div>
+  );
+};
+
+export default AnalyticsPage;

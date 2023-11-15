@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const Analytics = require('../models/analytics'); // Create the Analytics model
+
+// Define routes for analytics
+router.get('/', (req, res) => {
+  // Implement logic to fetch analytics data from MongoDB
+  res.json({ data: /* fetched analytics data */ });
+});
+
+module.exports = router;

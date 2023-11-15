@@ -1,0 +1,17 @@
+import React, { useState } from 'react';
+import ReportingFilter from './ReportingFilter'; // Create this component for user filters
+import ReportingTable from './ReportingTable'; // Create this component for displaying reporting data
+
+const ReportingPage = () => {
+  // Use state to manage user-selected filters
+
+  return (
+    <div>
+      <h1>Reporting Page</h1>
+      <ReportingFilter />
+      <ReportingTable />
+    </div>
+  );
+};
+
+export default ReportingPage;
