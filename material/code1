@@ -1,0 +1,18 @@
+// AnalyticsDashboard.jsx
+import React from 'react';
+import AnalyticsChart from './AnalyticsChart';
+import ReportList from './ReportList';
+
+const AnalyticsDashboard = () => {
+  // fetch and display analytics data
+  return (
+    <div>
+      <h2>Analytics Dashboard</h2>
+      <AnalyticsChart />
+      <ReportList />
+      {/* Add more analytics components */}
+    </div>
+  );
+};
+
+export default AnalyticsDashboard;
