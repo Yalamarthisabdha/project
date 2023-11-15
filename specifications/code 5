@@ -1,0 +1,8 @@
+const mongoose = require('mongoose');
+
+const analyticsDataSchema = new mongoose.Schema({
+  // Define schema fields for analytics data
+  // Example: metrics, timestamps, categories, etc.
+});
+
+module.exports = mongoose.model('AnalyticsData', analyticsDataSchema);
